@@ -1,0 +1,25 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+
+    git clone https://<AZURE_DEVOPS_PAT>@dev.azure.com/rajapriya14/SampleProj/_git/TemplateforMigration TemplateforMigration
+    cd TemplateforMigration
+    git remote add github https://<GITHUB_PAT>@github.com/rajapriya7/TempMigration 
+    git pull origin main --rebase
+    git reset --hard origin/main
+    git push -u github main --force
+  displayName: ‘Copy Code to GitHub’
+
