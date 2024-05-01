@@ -9,14 +9,17 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+  - group: myvars
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
 - script: |
 
-    git clone https://<AZURE_DEVOPS_PAT>@dev.azure.com/rajapriya14/SampleProj/_git/TemplateforMigration TemplateforMigration
-    cd TemplateforMigration
+    git clone https://<AZURE_DEVOPS_PAT>@dev.azure.com/rajapriya14/SampleProj/_git/RpRepo RpRepo
+    cd RpRepo
     git remote add github https://<GITHUB_PAT>@github.com/rajapriya7/TempMigration 
     git pull origin main --rebase
     git reset --hard origin/main
