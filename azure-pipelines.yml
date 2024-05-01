@@ -18,9 +18,9 @@ steps:
 
 - script: |
 
-    git clone https://<AZURE_DEVOPS_PAT>@dev.azure.com/rajapriya14/SampleProj/_git/RpRepo RpRepo
+    git clone https://$(AZURE_DEVOPS_PAT)@dev.azure.com/rajapriya14/SampleProj/_git/RpRepo RpRepo
     cd RpRepo
-    git remote add github https://<GITHUB_TOKEN>@github.com/rajapriya7/TempMigration 
+    git remote add github https://$(GITHUB_TOKEN)@github.com/rajapriya7/TempMigration 
     git pull origin main --rebase
     git reset --hard origin/main
     git push -u github main --force
