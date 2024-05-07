@@ -4,7 +4,7 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+- none
 
 pool:
   vmImage: ubuntu-latest
@@ -13,16 +13,23 @@ variables:
   - group: myvars
 
 steps:
+- task: DownloadPipelineArtifact@2
+  inputs:
+    artifactName: 'source-repo-link'
+    downloadPath: '$(Pipeline.Workspace)'
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
+- script: |
+    cat $(Pipeline.Workspace)/source_repo.txt
+  displayName: 'Print Source Repo Content'
 
 - script: |
 
-    git clone https://$(AZURE_DEVOPS_PAT)@dev.azure.com/rajapriya14/SampleProj/_git/RpRepo RpRepo
-    cd RpRepo
-    git remote add github https://$(GITHUB_TOKEN)@github.com/rajapriya7/TempMigration 
-    git pull origin main --rebase
-    git reset --hard origin/main
-    git push -u github main 
+    # git clone https://$(AZURE_DEVOPS_PAT)@dev.azure.com/rajapriya14/SampleProj/_git/RpRepo RpRepo
+    # cd RpRepo
+    # git remote add github https://$(GITHUB_TOKEN)@github.com/rajapriya7/TempMigration 
+    # git pull origin main --rebase
+    # git reset --hard origin/main
+    # git push -u github main 
   displayName: ‘Copy Code to GitHub’
 
