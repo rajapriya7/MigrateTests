@@ -19,9 +19,13 @@ steps:
 #     downloadPath: '$(Pipeline.Workspace)'
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-- script: |
-    cat https://rajapriya14@dev.azure.com/rajapriya14/SampleProj/_git/RpRepo/source_repo.txt
-  displayName: 'Print Source Repo Content'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'https://rajapriya14@dev.azure.com/rajapriya14/SampleProj/_git/RpRepo/source_repo.txt'
+    Contents: '**'
+    TargetFolder: 'https://rajapriya14@dev.azure.com/rajapriya14/SampleProj/_git/RpRepo/azure-pipelines.yml'
+  
 
 # - script: |
 
