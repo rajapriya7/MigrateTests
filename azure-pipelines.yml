@@ -20,7 +20,7 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 - script: |
-    cat https://rajapriya14@dev.azure.com/rajapriya14/SampleProj/_git/RpRepo
+    cat https://rajapriya14@dev.azure.com/rajapriya14/SampleProj/_git/RpRepo/source_repo.txt
   displayName: 'Print Source Repo Content'
 
 # - script: |
