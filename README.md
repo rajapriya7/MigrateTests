@@ -1,8 +1,4 @@
-I'm just a readme file
 
-Just checking for auto-sync
-
-Edited on 07/05/2024 at 1518
 
 
 # Introduction 
