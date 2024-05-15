@@ -13,7 +13,7 @@ variables:
   - group: myvars
 
 steps:
-    - checkout: self
+  - checkout: self
     - script: |
       git clone https://$(AZURE_DEVOPS_PAT)$(cat input_file.txt | grep RpRepo) mydir
       cd mydir
