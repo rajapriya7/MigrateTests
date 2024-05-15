@@ -14,7 +14,7 @@ variables:
 
 steps:
     - checkout: self
-  - script: |
+    - script: |
       git clone https://$(AZURE_DEVOPS_PAT)$(cat input_file.txt | grep RpRepo) mydir
       cd mydir
       git remote add github https://$(GITHUB_PAT)$(cat input_file.txt | grep MigrateTests)
