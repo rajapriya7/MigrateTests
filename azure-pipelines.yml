@@ -15,7 +15,7 @@ variables:
 steps:
   
   - script: |
-     file_path=$(System.DefaultWorkingDirectory)/RpRepo/main/input_file.txt
+     file_path=$(System.DefaultWorkingDirectory)/RpRepo/input_file.txt
      echo "File Path: $file_path"
      cat $file_path
 #  - script: |
