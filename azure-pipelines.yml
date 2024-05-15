@@ -17,7 +17,7 @@ steps:
   - checkout: self
   - script: |
      file_path= https://$(AZURE_DEVOPS_PAT)@dev.azure.com/rajapriya14/SampleProj/_git/RpRepo/input_file.txt
-     echo "File Path: $file_path"
+     
      cat $file_path
 #  - script: |
 
