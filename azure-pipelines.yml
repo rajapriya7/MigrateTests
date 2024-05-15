@@ -16,6 +16,8 @@ steps:
   
   - checkout: self
   - script: |
+      env
+      pwd
      
      cat input_file
 #  - script: |
