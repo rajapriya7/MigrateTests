@@ -17,7 +17,7 @@ steps:
   - checkout: self
   - script: |
      
-     cat $(input_file)
+     cat input_file
 #  - script: |
 
 #       git clone https://$(AZURE_DEVOPS_PAT)@dev.azure.com/rajapriya14/SampleProj/_git/RpRepo RpRepos
