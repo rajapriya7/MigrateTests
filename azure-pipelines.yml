@@ -16,10 +16,13 @@ steps:
   
   - checkout: self
   - script: |
-     echo "File_Path: $(System.DefaultWorkingDirectory)"
-      # echo $(env)
-      # echo $(pwd)
-      # cat input_file
+     echo "File_Path: $(Build.SourceDirectory)"
+
+
+    #  echo "File_Path: $(System.DefaultWorkingDirectory)/"
+    #   echo $(env)
+    #   echo $(pwd)
+    #   cat input_file
 
 #  - script: |
 
