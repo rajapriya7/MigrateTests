@@ -16,7 +16,7 @@ steps:
   
   - checkout: self
   - script: |
-     echo "File_Path: $(Build.SourceDirectory)"
+     echo "File_Path: $(Build.SourcesDirectory)"
 
 
     #  echo "File_Path: $(System.DefaultWorkingDirectory)/"
