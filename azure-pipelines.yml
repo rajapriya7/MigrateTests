@@ -16,10 +16,9 @@ steps:
   
   - checkout: self
   - script: |
-      env
-      pwd
-     
-     cat input_file
+      echo $(env)
+      echo $(pwd)
+      cat input_file
 #  - script: |
 
 #       git clone https://$(AZURE_DEVOPS_PAT)@dev.azure.com/rajapriya14/SampleProj/_git/RpRepo RpRepos
