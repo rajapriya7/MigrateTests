@@ -16,9 +16,8 @@ steps:
   
   - checkout: self
   - script: |
-     echo "File_Path: $(Build.SourcesDirectory)"
-
-
+      File_Path= $(Build.SourcesDirectory)/data/input_file.txt
+      first_value=$(grep -m 1. $(File_Path))
     #  echo "File_Path: $(System.DefaultWorkingDirectory)/"
     #   echo $(env)
     #   echo $(pwd)
