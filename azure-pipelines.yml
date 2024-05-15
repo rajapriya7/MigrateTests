@@ -13,16 +13,25 @@ variables:
   - group: myvars
 
 steps:
-  
-  - checkout: self
+    - checkout: self
   - script: |
-      git clone https://$(AZURE_DEVOPS_PAT)$(cat input_file.txt | grep @dev.azure.com) mydir
+      git clone https://$(AZURE_DEVOPS_PAT)$(cat input_file.txt | grep RpRepo) mydir
       cd mydir
-      git remote add github https://$(GITHUB_PAT)$(cat input_file.txt | grep @github.com)
+      git remote add github https://$(GITHUB_PAT)$(cat input_file.txt | grep MigrateTests)
       git pull origin main --rebase
       git reset --hard origin/main
       git push -u github main --force
-    displayName: ‘Copy Code to GitHub’
+    displayName: ‘Filter By Repo Name’
+  
+  # - checkout: self
+  # - script: |
+  #     git clone https://$(AZURE_DEVOPS_PAT)$(cat input_file.txt | grep @dev.azure.com) mydir
+  #     cd mydir
+  #     git remote add github https://$(GITHUB_PAT)$(cat input_file.txt | grep @github.com)
+  #     git pull origin main --rebase
+  #     git reset --hard origin/main
+  #     git push -u github main --force
+  #   displayName: ‘Copy Code to GitHub’
 
     # File_Path= $(Build.SourcesDirectory)/data/input_file.txt
       # first_value=$(grep -m 1. $(File_Path))
