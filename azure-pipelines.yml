@@ -14,7 +14,7 @@ variables:
 
 steps:
 
-    - checkout: self
+  - checkout: self
   - script: |
       git clone https://$(AZURE_DEVOPS_PAT)$(cat input_file.txt | grep @dev.azure.com) mydir
       cd mydir
